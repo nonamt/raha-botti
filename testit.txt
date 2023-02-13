@@ -1,0 +1,793 @@
+/*
+* Ohjelmointi 1 kotitehtävä: osa 7
+* Testien tulosteet (testit.txt)
+*
+* Johanna Tiikkainen
+* 2022/12/29
+*
+*/
+
+/*
+* Testi 1: Ohjelman normaali toiminta
+*
+* Sisäänkirjautuminen tilinumerolla ja oikealla tunnusluvulla
+* Saldo- ja Tilitapahtumat-toiminnot ennen rahan nostoa
+* Nosto 210 euroa
+* Saldo- ja Tilitapahtumat-toiminnot noston jälkeen
+* Lopeta
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> s
+
+*** SALDO ***
+
+Tilin saldo on 9538.05 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> t
+
+*** TILITAPAHTUMAT ***
+
+Tulostetaan viimeisin tilitapahtuma
+
+Korttimaksu 55.90 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 9538.05 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> n
+
+Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein
+Syota 0, jos haluat palata paavalikkoon
+
+Syota nostettava maara euroina > 210
+
+Nostit 210 euroa
+50 euron seteleita 3 kpl ja 20 euron seteleita 3 kpl
+Tilin saldo on 9328.05 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> s
+
+*** SALDO ***
+
+Tilin saldo on 9328.05 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> t
+
+*** TILITAPAHTUMAT ***
+
+Tulostetaan viimeisin tilitapahtuma
+
+Nostettiin 210 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 59.585 s
+Press any key to continue.
+
+
+/*
+* Testi 2: Sisäänkirjautuminen
+*
+* Syötetään väärä tunnusluku 2 kertaa
+* Syötetään oikea tunnusluku
+* Poistutaan ohjelmasta
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > hi
+
+Vaara tunnusluku
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > y
+
+Syota tunnusluku > ?
+
+Vaara tunnusluku
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 10.348 s
+Press any key to continue.
+
+
+/*
+* Testi 3: Sisäänkirjautuminen
+*
+* Syötetään väärä tunnusluku ja useita virheellisiä syötteitä
+* Poistutaan ohjelmasta syöttämällä L
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0
+
+Vaara tunnusluku
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > i don't understand
+
+Virheellinen komento
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > a
+
+Virheellinen komento
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > 12345
+
+Virheellinen komento
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > .
+
+Virheellinen komento
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 14.718 s
+Press any key to continue.
+
+
+/*
+* Testi 4: Sisäänkirjautuminen
+* 
+* Syötetään väärä tunnusluku 3 kertaa
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0
+
+Vaara tunnusluku
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > y
+
+Syota tunnusluku > a
+
+Syota tunnusluku > 1.5
+
+Syotit vaaran tunnusluvun 3 kertaa. Sisaankirjautuminen hylatty
+
+Process returned 0 (0x0)   execution time : 10.656 s
+Press any key to continue.
+
+
+/*
+* Testi 5: Päävalikko
+*
+* Virheelliset syötteet päävalikossa
+* (merkkijono, numeroita, useita rivinvaihtoja)
+* 
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> good bot
+
+Virheellinen komento
+Valitse paavalikon toiminto
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> 12345
+
+Virheellinen komento
+Valitse paavalikon toiminto
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> 0.9
+
+Virheellinen komento
+Valitse paavalikon toiminto
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> a
+
+Virheellinen komento
+Valitse paavalikon toiminto
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+>
+
+
+Virheellinen komento
+Valitse paavalikon toiminto
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 17.069 s
+Press any key to continue.
+
+
+/*
+* Testi 6: Nosto
+*
+* Yritetään nostaa enemmän kuin tilillä on rahaa
+* Yritetään nostaa negatiivinen luku
+* Yritetään nostaa määriä, joita ohjelma ei tue
+* Nostettava määrä ei ole kokonaisluku
+* Palataan päävalikkoon syöttämällä 0
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 480.90 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> n
+
+Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein
+Syota 0, jos haluat palata paavalikkoon
+
+Syota nostettava maara euroina > 1000
+
+Tililla ei ole tarpeeksi nostettavaa rahaa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 480.90 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> n
+
+Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein
+Syota 0, jos haluat palata paavalikkoon
+
+Syota nostettava maara euroina > -1
+
+Virhe: Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein > 1500
+
+Virhe: Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein > 10
+
+Virhe: Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein > 5
+
+Virhe: Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein > 30
+
+Virhe: Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein > 90.99
+
+Et syottanyt kokonaislukua > abcde
+
+Et syottanyt kokonaislukua > !!!
+
+Et syottanyt kokonaislukua > 0
+
+Palataan paavalikkoon
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 42.051 s
+Press any key to continue.
+
+
+/*
+* Testi 7: Tiedosto
+*
+* Tilitiedoston saldorivi on tyhjä
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> s
+
+*** SALDO ***
+
+Tilin saldo on 0.00 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> t
+
+*** TILITAPAHTUMAT ***
+
+Tulostetaan viimeisin tilitapahtuma
+
+Nostettiin 20 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 0.00 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> n
+
+Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein
+Syota 0, jos haluat palata paavalikkoon
+
+Syota nostettava maara euroina > 20
+
+Tililla ei ole tarpeeksi nostettavaa rahaa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 16.828 s
+Press any key to continue.
+
+
+/*
+* Testi 8: Tiedosto
+*
+* Tiedosto on tyhjä
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0
+
+Virhe: Tiedostoa ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 5.156 s
+Press any key to continue.
+
+
+/*
+* Testi 9: Tiedosto
+*
+* Tiedoston ensimmäinen rivi (tunnusluku) on tyhjä
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > 0
+
+Virhe: Tunnuslukua ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 4.413 s
+Press any key to continue.
+
+
+/*
+* Testi 10: Tiedosto
+*
+* Tiedostossa on vain yksi rivi
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > test
+
+Virhe: Saldoa ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 4.010 s
+Press any key to continue.
+
+
+/*
+* Testi 11: Tiedosto
+*
+* Tiedostossa on vain kaksi riviä
+* Nosto 110 euroa
+* Tilitapahtumat-toiminto noston jälkeen
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > test
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> t
+
+*** TILITAPAHTUMAT ***
+
+Tulostetaan viimeisin tilitapahtuma
+
+Virhe: Tilitapahtumia ei voitu lukea
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 150.00 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> n
+
+Voit nostaa 20 tai 40-1000 euroa kymmenen euron valein
+Syota 0, jos haluat palata paavalikkoon
+
+Syota nostettava maara euroina > 110
+
+Nostit 110 euroa
+50 euron seteleita 1 kpl ja 20 euron seteleita 3 kpl
+Tilin saldo on 40.00 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> t
+
+*** TILITAPAHTUMAT ***
+
+Tulostetaan viimeisin tilitapahtuma
+
+Nostettiin 110 euroa
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 14.404 s
+Press any key to continue.
+
+
+/*
+* Testi 12: Tiedosto
+*
+* Tiedoston saldorivi on tyhjä
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > test
+
+Virhe: Saldoa ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 4.192 s
+Press any key to continue.
+
+
+
+
+/*
+* Testi 13: Tiedosto
+*
+* Tiedoston saldorivillä muita merkkejä kuin numeroita
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > test
+
+Virhe: Saldoa ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 4.993 s
+Press any key to continue.
+
+
+/*
+* Testi 14: Tiedosto
+*
+* Tiedoston saldorivillä reaaliluku
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > test
+
+Virhe: Saldoa ei voitu lukea
+
+Process returned 0 (0x0)   execution time : 4.065 s
+Press any key to continue.
+
+
+/*
+* Testi 15: Tiedosto
+*
+* Tiedoston saldorivillä negatiivinen luku 
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > filetest
+
+Syota tunnusluku > 1234
+
+Virhe: Tilin saldo on negatiivinen
+
+Process returned 0 (0x0)   execution time : 3.680 s
+Press any key to continue.
+
+
+/*
+* Testi 16: Nosto
+*
+* Virheellinen syöte Nosto-valikossa
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 0111
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 531.01 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> raha-botti
+
+Virheellinen komento
+Palataan paavalikkoon
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> n
+
+*** NOSTO ***
+
+Tilin saldo on 531.01 euroa
+
+[ N ] Nosta
+[ P ] Paavalikko
+[ L ] Lopeta
+
+> 12345
+
+Virheellinen komento
+Palataan paavalikkoon
+
+*** PAAVALIKKO ***
+
+[ N ]: Nosta
+[ S ]: Saldo
+[ T ]: Tilitapahtumat
+[ L ]: Lopeta
+
+> l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 15.301 s
+Press any key to continue.
+
+
+/*
+* Testi 17: Tunnusluku
+*
+* Poistutaan väärän tunnusluvun jälkeen L-komennolla
+*
+*/
+
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > 45100
+
+Syota tunnusluku > 1234
+
+Vaara tunnusluku
+Syota "Y" yrittaaksesi uudelleen tai "L" poistuaksesi RAHA-BOTISTA > l
+
+Kiitos RAHA-BOTIN kaytosta! Tervetuloa uudestaan
+
+Process returned 0 (0x0)   execution time : 5.179 s
+Press any key to continue.
+
+
+/*
+* Testi 18: Tiedosto
+*
+* Yritetään avata tiedosto, jota ei ole olemassa
+*
+*/
+
+Tervetuloa RAHA-BOTTIIN. Syota tilinumero > admin
+
+Virhe: Tilia ei ole olemassa
+Process returned 0 (0x0)   execution time : 2.116 s
+Press any key to continue.
+
